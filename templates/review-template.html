@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>原型与 PRD · 设计审阅模板</title>
+<style>
+*{box-sizing:border-box}body{margin:0;color:#243247;background:#f3f5f8;font:15px/1.65 system-ui,"Microsoft YaHei",sans-serif}button{font:inherit;cursor:pointer;border:1px solid #d4dbe6;background:white;border-radius:7px;padding:7px 13px;color:inherit}button:hover{background:#edf3ff}button:focus-visible{outline:3px solid #a7c3ff}header{padding:16px 24px;background:#fff;border-bottom:1px solid #dce2eb;display:flex;gap:16px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0}h2{font-size:19px;margin:0 0 16px}h3{font-size:15px;margin:22px 0 8px}p{margin:8px 0}.meta{font-size:13px;color:#627087}.badge{display:inline-block;border-radius:20px;padding:2px 9px;background:#fff0d0;color:#77520a;font-size:12px}.layout{display:grid;grid-template-columns:190px minmax(360px,1fr) minmax(320px,420px);min-height:calc(100vh - 105px)}nav{padding:22px 14px;border-right:1px solid #dce2eb}nav button{display:block;width:100%;text-align:left;margin:7px 0;background:transparent;border-color:transparent}nav button[aria-current=page]{background:#e3ecff;color:#2455bd;font-weight:600}main{padding:24px;min-width:0}aside{background:white;border-left:1px solid #dce2eb;padding:24px;min-width:0}.toolbar{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}.canvas{background:#fff;border:1px solid #dce2eb;border-radius:12px;padding:24px;min-height:370px}.note{border-left:3px solid #95b4f3;background:#f1f5fe;padding:10px 14px;font-size:13px}.primary{background:#285dcc;color:white;border-color:#285dcc}.row{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:16px 0;border-bottom:1px solid #e6eaf0}.rule{padding:10px 0;border-bottom:1px solid #edf0f5}.rule strong{display:block}.id{font:12px ui-monospace,monospace;color:#65758e}dl{display:grid;grid-template-columns:90px 1fr;gap:12px}dt{color:#6b7789}dd{margin:0}.toast{min-height:28px;color:#24623c;margin-top:16px}.wide .layout{grid-template-columns:190px minmax(360px,1fr)}.wide aside{display:none}footer{font-size:12px;color:#68758a;margin-top:24px}@media(max-width:1050px){.layout{grid-template-columns:160px minmax(0,1fr)}aside{grid-column:2;border-top:1px solid #dce2eb}.wide .layout{grid-template-columns:160px minmax(0,1fr)}}@media(max-width:640px){.layout,.wide .layout{display:block}nav{border-right:0;border-bottom:1px solid #dce2eb;padding:10px}nav button{display:inline-block;width:auto}main,aside{padding:16px}.canvas{padding:16px}header{padding:14px}.toolbar{flex-wrap:wrap}}
+</style>
+<!--
+  ════════════════════════════════════════════════════════════════
+  模板说明（生成具体功能时保留本注释块并更新以下字段）
+  ------------------------------------------------------------------
+  模板名称：原型与 PRD · 设计审阅模板
+  模板版本：v0.1
+  骨架来源：产品方提供的审阅模板 HTML（未改动样式与结构）
+  用法    ：复制本文件 → 替换 design 对象中的 overview / P01 / P02 …
+            等页面与规则编号 → 同步更新 <header> 中的项目 / 功能 / 版本
+  —— 以下字段由需求转化智能体在生成具体功能时填写 ——
+  生成时间：<未填充>
+  条目范围：<未填充>
+  对应原型：<未填充>
+  未完成项：<未填充>
+  ════════════════════════════════════════════════════════════════
+-->
+<header><h1>客户跟进任务 · 设计审阅</h1><span class="badge">虚构示例 · 全部待审阅</span><span class="meta">项目 DEMO / 功能 F001 / 设计 v0.1</span></header>
+<div class="layout">
+<nav aria-label="设计页面"><div class="meta">整体设计</div><button data-page="overview">范围与全局规则</button><div class="meta" style="margin-top:22px">页面原型</div><button data-page="list">P01 · 任务列表</button><button data-page="detail">P02 · 任务详情</button><p class="meta">切换页面后，PRD 自动定位。示例数据仅在当前浏览器内存中生效。</p></nav>
+<main><div class="toolbar"><span id="location" class="meta"></span><button id="expand" aria-pressed="false">展开原型</button></div><div id="prototype" class="canvas"></div><p id="feedback" class="toast" role="status" aria-live="polite"></p><footer>这是审阅模板，非生产应用。替换为当前功能内容后交付；模板示例不能作为已确认需求。</footer></main>
+<aside aria-label="对应 PRD"><div class="toolbar"><strong>对应 PRD</strong><span class="badge">待审阅</span></div><div id="prd"></div></aside>
+</div>
+<script>
+// 生成具体功能时，同时从产品设计.md 的对应页面与规则填充原型和说明。
+// 保留稳定编号、来源与确认状态；不要将此示例业务复制为真实需求。
+const design = {
+ overview:{title:'范围与全局规则',rules:[['G01','本期范围','销售查看任务、打开详情并完成跟进。全部为虚构提议，未获业务确认。'],['G02','权限与边界','示例仅展示本人任务；主管操作、多人协作与真实权限判断未实现。'],['Q01','待确认问题','任务完成后是否允许撤回？本模板暂未制作撤回交互，不能据此认定不允许。']],acceptance:'确认本期范围、角色和完成规则后，再整理正式验收。'},
+ list:{title:'P01 · 任务列表',rules:[['P01-R01','展示信息','展示任务名称、客户和当前状态；点击“查看详情”进入 P02。'],['P01-R02','页面切换','打开详情保留所选任务上下文；返回列表显示本次原型操作后的状态。'],['Q02','待确认问题','筛选、分页、空数据、加载失败的具体行为尚未定义。']],acceptance:'待审阅：打开列表中的任务后，详情应显示同一客户与任务；返回列表后，状态应与详情一致。'},
+ detail:{title:'P02 · 任务详情',rules:[['P02-R01','完成任务','仅待跟进状态展示“完成任务”；点击后，本地示例状态变为已完成。'],['P02-R02','成功反馈','显示完成提示，按钮消失；返回列表后显示已完成。刷新后重置示例数据。'],['Q03','未覆盖的边界','真实提交失败、并发修改和无权限状态尚未设计，不代表已验证。']],acceptance:'待审阅：完成待跟进任务后，详情与列表均显示已完成；已完成任务不再展示完成按钮。'}
+};
+let page='list',completed=false;
+const prototype=document.getElementById('prototype'), prd=document.getElementById('prd'),feedback=document.getElementById('feedback');
+function render(next){
+ page=next; feedback.textContent='';
+ document.querySelectorAll('[data-page]').forEach(button=>{if(button.dataset.page===page)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')});
+ const data=design[page]; document.getElementById('location').textContent=data.title;
+ prd.replaceChildren(); const title=document.createElement('h2');title.textContent=data.title;prd.append(title);
+ data.rules.forEach(([id,name,text])=>{const section=document.createElement('section');section.className='rule';section.id=id;const code=document.createElement('span');code.className='id';code.textContent=id+' · 待审阅 · 模板示例';const heading=document.createElement('strong');heading.textContent=name;const content=document.createElement('p');content.textContent=text;section.append(code,heading,content);prd.append(section)});
+ const acceptance=document.createElement('h3');acceptance.textContent='验收行为草案';const text=document.createElement('p');text.textContent=data.acceptance;prd.append(acceptance,text);
+ if(page==='overview')prototype.innerHTML='<h2>客户跟进任务</h2><p>帮助销售查看并完成客户跟进任务。</p><div class="note">虚构示例：业务规则、页面和验收均待审阅。没有任何真实项目确认依据。</div><h3>用户流程</h3><p>任务列表 → 查看任务详情 → 完成任务 → 返回列表</p><button data-go="list" class="primary">进入原型</button>';
+ if(page==='list')prototype.innerHTML='<h2>我的任务</h2><p class="meta">共 1 条任务 · 虚构数据</p><div class="row"><div><strong>了解续约意向</strong><div class="meta">示例客户 A · '+(completed?'已完成':'待跟进')+'</div></div><button data-go="detail">查看详情</button></div>';
+ if(page==='detail')prototype.innerHTML='<button data-go="list">← 返回任务列表</button><h2 style="margin-top:24px">了解续约意向</h2><dl><dt>客户</dt><dd>示例客户 A</dd><dt>任务状态</dt><dd>'+(completed?'已完成':'待跟进')+'</dd><dt>任务说明</dt><dd>联系客户了解续约计划。</dd></dl>'+(completed?'<p class="note">本次示例操作已完成，可返回列表核对状态。</p>':'<button id="complete" class="primary">完成任务</button>');
+}
+document.addEventListener('click',event=>{const nav=event.target.closest('[data-page],[data-go]');if(nav)render(nav.dataset.page||nav.dataset.go);if(event.target.id==='complete'){completed=true;render('detail');feedback.textContent='任务已完成（仅本地示例），可返回列表核对。'}});
+document.getElementById('expand').addEventListener('click',event=>{const expanded=document.body.classList.toggle('wide');event.target.setAttribute('aria-pressed',String(expanded));event.target.textContent=expanded?'恢复同屏':'展开原型'});
+render(page);
+</script>
+</html>
