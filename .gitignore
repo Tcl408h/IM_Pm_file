@@ -67,3 +67,11 @@ tmp/
 *.keystore
 secrets/
 credentials/
+
+# ---- 语雀拉取的临时素材（PRD 全文快照 + CDN 图片），不入库 ----
+_tmp_prd_full.md
+_tmp_imgs/
+# ---- 第8章解析中间产物与图片预览（不入库）----
+_tmp_ch8.json
+_tmp_parse8.js
+_tmp_peek/
