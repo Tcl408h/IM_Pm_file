@@ -75,3 +75,9 @@ _tmp_imgs/
 _tmp_ch8.json
 _tmp_parse8.js
 _tmp_peek/
+# ---- 临时文件（不入库）----
+_preview_template.html
+_tmp_dbg.js
+_tmp_demo_build.js
+_tmp_demo_data.json
+_tmp_demo_img.txt
