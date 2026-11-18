@@ -49,12 +49,15 @@ IM_chat_group/
 │  └─ samples/                   # 示例原型（只读）：README.md + IM系统-总览.html
 ├─ project/
 │  └─ IM服务群PRD/               # 交付成品：语雀 PRD「IM服务群PRD」转成的离线审阅页
-│     ├─ 设计审阅.html            # v0.1.0 当前入口（第 1–7 章，4.38 MB）
-│     ├─ 设计审阅.v0.1.0.html     # v0.1.0 冻结副本
-│     ├─ 设计审阅.v0.2.0.html     # v0.2.0 现行版（第 1–8 章全量，22.96 MB）
-│     ├─ 上下文交接.md            # ★ 总纲：铁律 / 技术实现 / 校验体系 / 踩坑 / 未完成项
-│     ├─ 进度记录.md              # 进度表：逐条需求对照、校验结果
-│     └─ 会话记录.md              # 历史：时间线与用户原话锚点
+│     ├─ README.md               # ★ 交付目录索引：先看哪个、怎么用
+│     ├─ html/                   # 审阅页面（双击即开，离线可用）
+│     │  ├─ 设计审阅.v0.2.0.html  # v0.2.0 现行版（第 1–8 章全量，22.96 MB / 154 节点 / 146 图）
+│     │  ├─ 设计审阅.html         # v0.1.0 工作版（第 1–7 章，4.38 MB）
+│     │  └─ 设计审阅.v0.1.0.html  # v0.1.0 冻结存档
+│     └─ docs/                   # 文档
+│        ├─ 上下文交接.md         # ★ 总纲：铁律 / 技术实现 / 校验体系 / 踩坑 / 未完成项
+│        ├─ 进度记录.md           # 进度表：逐条需求对照、校验结果
+│        └─ 会话记录.md           # 历史：时间线与用户原话锚点
 ├─ LICENSE                       # MIT
 └─ .gitignore
 ```
@@ -63,7 +66,7 @@ IM_chat_group/
 
 1. **当提示词用**：复制 `agent/IM_prompt.md` 全文 → 粘到对话模型 → 附墨刀原型截图（按页命名）+ 页面清单 → 附已整理好的 PRD。原型也可以直接用 `node skills/modao-prototype/modao/cli.mjs` 取，见 [`skills/README.md`](skills/README.md)；示例原型见 [`templates/samples/`](templates/samples/README.md)。
 2. **当模板用**：复制 `templates/review-template.html` → 截图 base64 转进 `#prototype` → PRD 按页放进 `design` → 填完文件头占位符 → 交付。
-3. **看实际成品**：直接双击 `project/IM服务群PRD/设计审阅.v0.2.0.html`（单文件离线，无外部依赖、无联网请求）。接手前先读 `project/IM服务群PRD/上下文交接.md`——里面是完整上下文：内容铁律、构建链、校验体系、20 条踩坑、未完成项。
+3. **看实际成品**：直接双击 `project/IM服务群PRD/html/设计审阅.v0.2.0.html`（单文件离线，无外部依赖、无联网请求）。接手前先读 `project/IM服务群PRD/docs/上下文交接.md`——里面是完整上下文：内容铁律、构建链、校验体系、20 条踩坑、未完成项。
 4. **归档交付物**：生成的 HTML 默认被 `.gitignore` 忽略（`output/`、`*.local.html`），要入库用 `git add -f`。
 5. **加新能力**：在 `skills/<skill-name>/` 下写 `SKILL.md` + 脚本，按 [`skills/README.md`](skills/README.md) 的字段说明填。外部能力只放这里，不再新开 `tools/` 之类目录。
 
