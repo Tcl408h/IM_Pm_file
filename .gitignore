@@ -81,3 +81,9 @@ _tmp_dbg.js
 _tmp_demo_build.js
 _tmp_demo_data.json
 _tmp_demo_img.txt
+# ---- 一次性诊断脚本与中间产物（不入库）----
+# 真正可复现的解析/构建链在 tools/ 下，这几条只挡临时垃圾
+_tmp_*.js
+_tmp_*.json
+_tmp_*.mjs
+_tmp_*.md
